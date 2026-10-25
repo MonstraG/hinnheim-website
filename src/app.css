@@ -1,0 +1,120 @@
+@layer reset, global, theme, ui;
+
+@layer reset {
+	/* https://www.joshwcomeau.com/css/custom-css-reset */
+
+	*,
+	*::before,
+	*::after {
+		box-sizing: border-box;
+	}
+
+	@media (prefers-reduced-motion: no-preference) {
+		html {
+			interpolate-size: allow-keywords;
+		}
+	}
+
+	body {
+		line-height: 1.5;
+		-webkit-font-smoothing: antialiased;
+	}
+
+	img,
+	picture,
+	video,
+	canvas,
+	svg {
+		display: block;
+		max-width: 100%;
+	}
+
+	input,
+	button,
+	textarea,
+	select {
+		font: inherit;
+	}
+
+	p,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		overflow-wrap: break-word;
+	}
+
+	p {
+		text-wrap: pretty;
+	}
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		text-wrap: balance;
+	}
+
+	body > div {
+		isolation: isolate;
+	}
+}
+
+@layer global {
+	html,
+	body {
+		font-size: 16px;
+		font-family: system-ui, ui-sans-serif;
+		margin: 0;
+
+		/* todo: think about dark mode */
+	}
+
+	h1,h2,h3,h4,h5,h6 {
+		font-family: "Marcellus", serif;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		::view-transition-group(*),
+		::view-transition-old(*),
+		::view-transition-new(*) {
+			/* biome-ignore lint/complexity/noImportantStyles: respect motion preferences */
+			animation: none !important;
+		}
+	}
+}
+
+@layer theme {
+	:root {
+		--red: #9b2b2a;
+		--green: #516e50;
+		--beige: #f6f0da;
+	}
+}
+
+@layer ui {
+	.myNav {
+		display: flex;
+		background: var(--beige);
+		padding: 2rem;
+	}
+
+	.myLink {
+		color: var(--red);
+		cursor: pointer;
+
+		text-decoration: underline;
+		text-decoration-thickness: 1px;
+
+		&:hover {
+			text-decoration-thickness: 2px;
+		}
+	}
+}
+
+@layer utils {
+
+}

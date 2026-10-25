@@ -1,0 +1,8 @@
+/tmp/
+/node_modules
+.vscode/*
+/dist/
+.env
+/node_modules/
+/.react-router/
+/build/

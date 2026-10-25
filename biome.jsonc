@@ -1,0 +1,79 @@
+{
+	"$schema": "https://biomejs.dev/schemas/2.6.3/schema.json",
+	"vcs": { "enabled": false, "clientKind": "git", "useIgnoreFile": false },
+	"files": {
+		"includes": [
+			"app/**",
+			"tsconfig.json",
+			"package.json",
+			"vite.config.ts",
+			"react-router.config.ts",
+			"pnpm-workspace.yaml",
+			"biome.jsonc"
+		]
+	},
+	"formatter": {
+		"enabled": true,
+		"indentStyle": "tab",
+		"lineWidth": 100,
+		"indentWidth": 4
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"preset": "recommended",
+			"a11y": {
+				"noSvgWithoutTitle": "off" // for some reason it ignores aria, and Next.js shows title in ImageResponse as text
+			},
+			"performance": {
+				"noJsxPropsBind": "off" // I have React compiler for that
+			},
+			"style": {
+				// if those globals accessed you just forgot to add param somewhere
+				"noRestrictedGlobals": {
+					"level": "error",
+					"options": {
+						"deniedGlobals": {
+							"error": "you forgot import or function argument",
+							"close": "you forgot import or function argument",
+							"open": "you forgot import or function argument",
+							"event": "you forgot import or function argument"
+						}
+					}
+				},
+				"useComponentExportOnlyModules": {
+					"level": "error",
+					"options": {
+						"allowConstantExport": true,
+						"allowExportNames": [
+							"json",
+							"loader",
+							"headers",
+							"links",
+							"scripts"
+							// not 'meta', use React's builtins! https://reactrouter.com/start/framework/route-module#meta
+						]
+					}
+				}
+			},
+			"security": {
+				// https://developer.mozilla.org/en-US/docs/Web/API/Element/setHTML
+				// is not there yet, sadly
+				"noDangerouslySetInnerHtml": "off"
+			},
+			"suspicious": {
+				// sorry, but sometimes yesArrayIndexKey
+				"noArrayIndexKey": "off",
+				// forces to write ugly
+				"noLeakedRender": "off"
+			}
+		},
+		"domains": {
+			"react": "all",
+			"test": "all"
+		}
+	},
+	"assist": {
+		"enabled": false
+	}
+}

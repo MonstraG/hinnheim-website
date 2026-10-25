@@ -1,0 +1,8 @@
+minimumReleaseAge: 1440
+
+trustPolicy: no-downgrade
+
+blockExoticSubdeps: true
+
+trustPolicyExclude:
+    - semver@6.3.1
