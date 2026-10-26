@@ -8,7 +8,7 @@ interface Props {
 
 export function MyLink({ href, children }: Props): ReactElement {
 	return (
-		<Link to={href} className="myLink">
+		<Link to={href} className="myLink" prefetch="intent">
 			{children}
 		</Link>
 	);

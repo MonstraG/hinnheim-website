@@ -1,0 +1,11 @@
+{
+	"hello": "world",
+	"home": {
+		"title": "HOme",
+		"description": "this is home"
+	},
+	"about": {
+		"title": "About",
+		"description": "This is about"
+	}
+}

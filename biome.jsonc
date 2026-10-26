@@ -3,7 +3,7 @@
 	"vcs": { "enabled": false, "clientKind": "git", "useIgnoreFile": false },
 	"files": {
 		"includes": [
-			"app/**",
+			"src/**",
 			"tsconfig.json",
 			"package.json",
 			"vite.config.ts",
@@ -46,6 +46,7 @@
 					"options": {
 						"allowConstantExport": true,
 						"allowExportNames": [
+							"shouldRevalidate",
 							"json",
 							"loader",
 							"headers",
