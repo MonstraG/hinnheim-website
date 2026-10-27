@@ -1,5 +1,5 @@
 import type { Config } from "@react-router/dev/config";
-import { routeRegistry } from "./src/root/routeRgistry.ts";
+import { routeRegistry } from "./src/root/routeRegistry.ts";
 
 const config: Config = {
 	ssr: false,

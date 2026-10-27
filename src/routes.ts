@@ -1,5 +1,5 @@
 import { type RouteConfig, index, prefix, route } from "@react-router/dev/routes";
-import { routeRegistry } from "./root/routeRgistry.ts";
+import { routeRegistry } from "./root/routeRegistry.ts";
 
 const config: RouteConfig = prefix(
 	":lang?",
