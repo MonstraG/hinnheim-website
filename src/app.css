@@ -78,8 +78,17 @@
 	h3,
 	h4,
 	h5,
-	h6 {
+	h6,
+	.font-medieval {
 		font-family: "Marcellus", serif;
+		font-weight: 400;
+		font-style: normal;
+	}
+
+	.font-gothic {
+		font-family: "Faculty Glyphic", sans-serif;
+		font-weight: 400;
+		font-style: normal;
 	}
 
 	::view-transition-group(*),
@@ -118,6 +127,11 @@
 		justify-content: space-between;
 		background: var(--beige);
 		padding: 2rem;
+
+		.myLogo {
+			height: 80px;
+			margin-block: -16px;
+		}
 	}
 
 	.myLink {
@@ -162,7 +176,7 @@
 		margin: 0;
 	}
 
-	.displayNone {
-		display: none;
+	.user-select-none {
+		user-select: none;
 	}
 }
