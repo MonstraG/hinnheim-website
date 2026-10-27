@@ -12,13 +12,9 @@ import "./app.css";
 import type { ReactNode, ReactElement } from "react";
 import { ViewTransition } from "react";
 import { TopNavigation } from "./root/TopNavigation.tsx";
-import {
-	defaultLanguage,
-	I18nContext,
-	type I18nContextValue,
-	type Language,
-} from "./i18n/I18nContext.ts";
+import { type I18nContextValue, I18nContext } from "./i18n/I18nContext.ts";
 import { useLanguageFromPathname } from "./i18n/useLanguageFromPathname.ts";
+import { allLanguages, defaultLanguage } from "./i18n/language.ts";
 
 export const links: Route.LinksFunction = () => [
 	{ rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -34,18 +30,12 @@ export const links: Route.LinksFunction = () => [
 ];
 
 export async function loader({ params }: Route.LoaderArgs): Promise<I18nContextValue> {
-	if (params.lang !== undefined && params.lang !== "nb") {
-		throw new Response("Not Found", { status: 404 });
-	}
+	const language = allLanguages.find((l) => l.code === params.lang) ?? defaultLanguage;
+	const module = await import(`./i18n/locales/${language.code}.json`, {
+		with: { type: "json" },
+	});
 
-	const language: Language = params.lang === "nb" ? "nb-NO" : defaultLanguage;
-
-	const json =
-		language === "nb-NO"
-			? await import("./i18n/locales/nb-NO.json")
-			: await import("./i18n/locales/en-GB.json");
-
-	return { language, t: json.default };
+	return { language, t: module.default };
 }
 
 export function Layout({ children }: { children: ReactNode }): ReactElement {

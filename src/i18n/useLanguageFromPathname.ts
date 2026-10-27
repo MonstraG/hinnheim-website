@@ -1,7 +1,16 @@
-import { useMatch } from "react-router";
-import { defaultLanguage, type Language } from "./I18nContext.ts";
+import { unstable_useRoute as useRoute } from "react-router";
+import { defaultLanguage, isLanguage, type Language } from "./language.ts";
 
-export function useLanguageFromPathname(): Language {
-	const norwegianMatch = useMatch("/nb/*");
-	return norwegianMatch ? "nb-NO" : defaultLanguage;
+export function useLanguageFromPathname(): Language["code"] {
+	const { loaderData } = useRoute();
+	if (
+		loaderData != null &&
+		typeof loaderData === "object" &&
+		"language" in loaderData &&
+		isLanguage(loaderData.language)
+	) {
+		return loaderData.language.code;
+	}
+
+	return defaultLanguage.code;
 }

@@ -4,6 +4,7 @@
 	"files": {
 		"includes": [
 			"src/**",
+			"scripts/**",
 			"tsconfig.json",
 			"package.json",
 			"vite.config.ts",
@@ -22,13 +23,19 @@
 		"enabled": true,
 		"rules": {
 			"preset": "recommended",
-			"a11y": {
-				"noSvgWithoutTitle": "off" // for some reason it ignores aria, and Next.js shows title in ImageResponse as text
-			},
 			"performance": {
 				"noJsxPropsBind": "off" // I have React compiler for that
 			},
 			"style": {
+				// test is obviously better
+				"useConsistentTestIt": {
+					"level": "on",
+					"options": {
+						"function": "test"
+					}
+				},
+				// it's not the best a lof of the time
+				"useTemplate": "off",
 				// if those globals accessed you just forgot to add param somewhere
 				"noRestrictedGlobals": {
 					"level": "error",

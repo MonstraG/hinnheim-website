@@ -34,6 +34,7 @@
 	"include": [
 		"src/**/*",
 		"src/**/*.json",
+		"scripts/**/*",
 		"**/.server/**/*",
 		"**/.client/**/*",
 		".react-router/types/**/*",
