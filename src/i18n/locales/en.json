@@ -1,8 +1,10 @@
 {
 	"logoAlt": "Our logo",
-	"hello": "world",
+	"nav": {
+		"language": "Language"
+	},
 	"home": {
-		"title": "HOme",
+		"title": "Home",
 		"description": "this is home"
 	},
 	"about": {

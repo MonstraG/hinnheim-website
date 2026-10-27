@@ -3,7 +3,7 @@ import { allRoutes } from "./root/routeRegistry.ts";
 
 const config: RouteConfig = prefix(
 	":lang?",
-	allRoutes.map(({ path, file }) => route(path.slice(1), file)),
+	allRoutes.map(({ path, file }) => route(path.slice(1), file, { id: file })),
 );
 
 export default config;

@@ -1,12 +1,14 @@
 {
-	"logoAlt": "Vår ...",
-	"hello": "but norwegisn",
+	"logoAlt": "Logoen vår",
+	"nav": {
+		"language": "Språk"
+	},
 	"home": {
-		"title": "HOm2e",
-		"description": "this is home2"
+		"title": "Hjem",
+		"description": "Dette er hjemmeside"
 	},
 	"about": {
-		"title": "About but norwegian",
-		"description": "descrioption"
+		"title": "Om oss",
+		"description": "Dette er om oss"
 	}
 }

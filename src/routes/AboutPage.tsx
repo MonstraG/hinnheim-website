@@ -8,7 +8,7 @@ export default function AboutPage(): ReactElement {
 	return (
 		<div>
 			<MyMeta title={t.about.title} description={t.about.description} />
-			<p>{t.hello}</p>
+			<h1>{t.about.title}</h1>
 		</div>
 	);
 }
