@@ -6,9 +6,9 @@ export default function AboutPage(): ReactElement {
 	const { t } = useI18nContext();
 
 	return (
-		<>
+		<div className="container">
 			<MyMeta title={t.about.title} description={t.about.description} />
 			<h1>{t.about.title}</h1>
-		</>
+		</div>
 	);
 }

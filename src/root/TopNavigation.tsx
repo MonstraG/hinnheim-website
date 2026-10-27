@@ -10,12 +10,14 @@ export function TopNavigation(): ReactElement {
 
 	return (
 		<nav className="myNav">
-			<MyLink route={routeRegistry.home}>
-				<Logo />
-			</MyLink>
-			<MyLink route={routeRegistry.home}>{t.home.title}</MyLink>
-			<MyLink route={routeRegistry.about}>{t.about.title}</MyLink>
-			<LanguageDropdown />
+			<div className="container">
+				<MyLink route={routeRegistry.home}>
+					<Logo />
+				</MyLink>
+				<MyLink route={routeRegistry.home}>{t.home.title}</MyLink>
+				<MyLink route={routeRegistry.about}>{t.about.title}</MyLink>
+				<LanguageDropdown />
+			</div>
 		</nav>
 	);
 }
