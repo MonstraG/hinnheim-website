@@ -16,6 +16,10 @@ const config: UserConfig = defineConfig({
 							test: /node_modules[\\/](?:react|react-dom|react-router)[\\/]/,
 						},
 						{
+							name: "vendor-lucide-react",
+							test: /node_modules[\\/]lucide-react[\\/]/,
+						},
+						{
 							name: "root-module",
 							test: /root[\\/]/,
 						},

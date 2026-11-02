@@ -18,6 +18,8 @@
 		"update-deps": "pnpm self-update && pnpm up -L && biome migrate --write"
 	},
 	"dependencies": {
+		"@react-router/node": "8.5.1",
+		"@react-router/serve": "8.5.1",
 		"isbot": "5.2.2",
 		"lucide-react": "1.66.0",
 		"react": "19.3.1",
@@ -27,8 +29,6 @@
 	"devDependencies": {
 		"@biomejs/biome": "2.6.4",
 		"@react-router/dev": "8.5.1",
-		"@react-router/node": "8.5.1",
-		"@react-router/serve": "8.5.1",
 		"@types/node": "26.6.6",
 		"@types/react": "19.3.0",
 		"@types/react-dom": "19.3.0",

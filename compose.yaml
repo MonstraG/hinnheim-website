@@ -1,0 +1,10 @@
+services:
+  hinnheim-website:
+    build:
+      context: .
+      args:
+        APP_UID: ${APP_UID:-1000}
+        GIT_COMMIT_SHA: ${GIT_COMMIT_SHA:-}
+    ports:
+      - "3010:3010"
+    restart: unless-stopped
