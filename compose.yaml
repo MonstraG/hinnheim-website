@@ -6,5 +6,5 @@ services:
         APP_UID: ${APP_UID:-1000}
         GIT_COMMIT_SHA: ${GIT_COMMIT_SHA:-}
     ports:
-      - "3010:3010"
+      - "3020:3020"
     restart: unless-stopped

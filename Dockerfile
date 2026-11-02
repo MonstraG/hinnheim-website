@@ -25,9 +25,9 @@ RUN --mount=type=cache,id=pnpm,target=/var/cache/pnpm \
 FROM base AS runner
 ENV NODE_ENV=production
 ENV HOST=0.0.0.0
-ENV PORT=3010
+ENV PORT=3020
 COPY --from=production-dependencies /app/node_modules ./node_modules
 COPY --from=production-dependencies /app/pnpm-lock.yaml /app/pnpm-workspace.yaml ./
 COPY --from=builder /app/build ./build
-EXPOSE 3010
+EXPOSE 3020
 CMD ["pnpm", "run", "start"]
