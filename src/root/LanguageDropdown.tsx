@@ -20,13 +20,13 @@ export function LanguageDropdown(): ReactElement | null {
 	return (
 		<>
 			<button
+				className="language-toggle"
 				type="button"
-				// biome-ignore lint/suspicious/noUnknownAttribute: bad biome
 				popoverTarget={id}
 				aria-label={t.nav.language}
 				title={t.nav.language}
 			>
-				<GlobeIcon />
+				<GlobeIcon className="language-toggle-icon" />
 			</button>
 			<MyMenu id={id}>
 				<ul className="unstyledList">
