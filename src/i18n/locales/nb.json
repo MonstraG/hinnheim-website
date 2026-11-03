@@ -4,8 +4,10 @@
 		"language": "Språk"
 	},
 	"home": {
-		"title": "Hjem",
-		"description": "Dette er hjemmeside",
+		"meta": {
+			"title": "Hjem",
+			"description": "Bergen Historiske Kampsportklubb er en klubb for historisk kampsport i Bergen, Norge."
+		},
 		"heroHeading": "Bergen Historiske",
 		"heroHeadingAccent": "Kampsportklubb",
 		"aboutHeading": "Manet lomme torden.",
@@ -36,7 +38,9 @@
 		"backToTop": "Til toppen"
 	},
 	"about": {
-		"title": "Om oss",
-		"description": "Dette er om oss"
+		"meta": {
+			"title": "Om oss",
+			"description": "tba"
+		}
 	}
 }

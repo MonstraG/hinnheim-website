@@ -2,6 +2,7 @@ import { type ReactElement, useId } from "react";
 import { Mail, MapPin } from "lucide-react";
 import { useI18nContext } from "../i18n/useI18nContext.ts";
 import { MyMeta } from "../root/MyMeta.tsx";
+import { routeRegistry } from "../root/routeRegistry.ts";
 import { LanguageDropdown } from "../root/LanguageDropdown.tsx";
 import { Logo } from "../ui/Logo.tsx";
 import { MyLink } from "../ui/MyLink.tsx";
@@ -19,7 +20,7 @@ export default function HomePage(): ReactElement {
 
 	return (
 		<div className="club-home" id={homeId}>
-			<MyMeta title={t.home.title} description={t.home.description} />
+			<MyMeta route={routeRegistry.home} />
 			<header className="club-header">
 				<MyLink
 					className="club-link club-brand"

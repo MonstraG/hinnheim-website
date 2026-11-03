@@ -4,8 +4,10 @@
 		"language": "Language"
 	},
 	"home": {
-		"title": "Home",
-		"description": "this is home",
+		"meta": {
+			"title": "Bergen Historiske Kampsportklubb",
+			"description": "Bergen Historiske Kampsportklubb is a historical martial arts club in Bergen, Norway"
+		},
 		"heroHeading": "Bergen Historiske",
 		"heroHeadingAccent": "Kampsportklubb",
 		"aboutHeading": "Jellyfish pocket thunder.",
@@ -36,7 +38,9 @@
 		"backToTop": "Back to top"
 	},
 	"about": {
-		"title": "About",
-		"description": "This is about"
+		"meta": {
+			"title": "About",
+			"description": "This page is under construction"
+		}
 	}
 }
