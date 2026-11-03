@@ -11,7 +11,6 @@ import type { Route } from "./+types/root";
 import "./app.css";
 import type { ReactNode, ReactElement } from "react";
 import { ViewTransition } from "react";
-import { TopNavigation } from "./root/TopNavigation.tsx";
 import { type I18nContextValue, I18nContext } from "./i18n/I18nContext.ts";
 import { useLanguageFromPathname } from "./i18n/useLanguageFromPathname.ts";
 import { allLanguages, defaultLanguage } from "./i18n/language.ts";
@@ -61,7 +60,6 @@ export function Layout({ children }: { children: ReactNode }): ReactElement {
 export default function App({ loaderData }: Route.ComponentProps): ReactElement {
 	return (
 		<I18nContext value={loaderData}>
-			<TopNavigation />
 			<ViewTransition>
 				<main>
 					<Outlet />

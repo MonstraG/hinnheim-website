@@ -5,6 +5,7 @@ import { allRoutes, routeRegistry } from "./routeRegistry.ts";
 import { unstable_useRouterState as useRouterState } from "react-router";
 import { MyMenu } from "../ui/MyMenu.tsx";
 import { useI18nContext } from "../i18n/useI18nContext.ts";
+import { MyButton } from "../ui/MyButton.tsx";
 import { GlobeIcon } from "lucide-react";
 
 export function LanguageDropdown(): ReactElement | null {
@@ -19,15 +20,15 @@ export function LanguageDropdown(): ReactElement | null {
 
 	return (
 		<>
-			<button
+			<MyButton
 				className="language-toggle"
 				type="button"
 				popoverTarget={id}
 				aria-label={t.nav.language}
 				title={t.nav.language}
 			>
-				<GlobeIcon className="language-toggle-icon" />
-			</button>
+				<GlobeIcon />
+			</MyButton>
 			<MyMenu id={id}>
 				<ul className="unstyledList">
 					{allLanguages.map((language) => (

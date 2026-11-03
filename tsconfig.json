@@ -7,7 +7,6 @@
 		"allowImportingTsExtensions": true,
 		"allowJs": false,
 		"erasableSyntaxOnly": true,
-		"exactOptionalPropertyTypes": true,
 		"forceConsistentCasingInFileNames": true,
 		"noFallthroughCasesInSwitch": true,
 		"noImplicitOverride": true,

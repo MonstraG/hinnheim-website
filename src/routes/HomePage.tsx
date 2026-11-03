@@ -1,9 +1,11 @@
 import { type ReactElement, useId } from "react";
-import { ArrowUpRight, Mail, MapPin } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 import { useI18nContext } from "../i18n/useI18nContext.ts";
 import { MyMeta } from "../root/MyMeta.tsx";
 import { LanguageDropdown } from "../root/LanguageDropdown.tsx";
 import { Logo } from "../ui/Logo.tsx";
+import { MyLink } from "../ui/MyLink.tsx";
+import { MyButton } from "../ui/MyButton.tsx";
 import "./HomePage.css";
 
 export default function HomePage(): ReactElement {
@@ -19,20 +21,20 @@ export default function HomePage(): ReactElement {
 		<div className="club-home" id={homeId}>
 			<MyMeta title={t.home.title} description={t.home.description} />
 			<header className="club-header">
-				<a
+				<MyLink
 					className="club-link club-brand"
-					href={`#${homeId}`}
+					route={`#${homeId}`}
 					aria-label={t.home.brandHomeLabel}
 				>
 					<Logo />
-				</a>
+				</MyLink>
 				<nav className="club-nav" aria-label={t.home.navigationLabel}>
-					<a className="club-link" href={`#${aboutId}`}>
+					<MyLink className="club-link" route={`#${aboutId}`}>
 						{t.home.clubLink}
-					</a>
-					<a className="club-link" href={`#${contactId}`}>
-						{t.home.contactLink} <ArrowUpRight className="club-link-icon" size={15} />
-					</a>
+					</MyLink>
+					<MyLink className="club-link" route={`#${contactId}`}>
+						{t.home.contactLink}
+					</MyLink>
 					<LanguageDropdown />
 				</nav>
 			</header>
@@ -52,9 +54,9 @@ export default function HomePage(): ReactElement {
 						{t.home.heroHeadingAccent}
 					</h1>
 					<p className="club-copy club-hero-copy">{t.home.heroCopy}</p>
-					<a className="club-link club-button club-button-light" href={`#${contactId}`}>
-						{t.home.findYourPlace} <ArrowUpRight className="club-link-icon" size={19} />
-					</a>
+					<MyButton variant="light" style={{ marginTop: 32 }} route={`#${contactId}`}>
+						{t.home.findYourPlace}
+					</MyButton>
 				</div>
 			</section>
 
@@ -65,9 +67,9 @@ export default function HomePage(): ReactElement {
 					</h2>
 					<div className="club-about-intro">
 						<p className="club-copy">{t.home.aboutCopy}</p>
-						<a className="club-link club-text-link" href={`#${contactId}`}>
-							{t.home.meetUs} <ArrowUpRight className="club-link-icon" />
-						</a>
+						<MyLink className="club-link club-text-link" route={`#${contactId}`}>
+							{t.home.meetUs}
+						</MyLink>
 					</div>
 				</div>
 				<div className="club-values">
@@ -97,30 +99,33 @@ export default function HomePage(): ReactElement {
 								{t.home.contactHeading}
 							</h2>
 							<p className="club-copy">{t.home.contactCopy}</p>
-							<a
-								className="club-link club-button club-button-light"
-								href={`mailto:${t.home.email}`}
+							<MyButton
+								variant="light"
+								style={{ marginTop: 32 }}
+								route={`mailto:${t.home.email}`}
 							>
-								{t.home.sayHello} <ArrowUpRight className="club-link-icon" />
-							</a>
+								{t.home.sayHello}
+							</MyButton>
 						</div>
 						<div className="club-contact-details">
 							<div className="club-contact-item">
 								<Mail />
 								<div>
 									<span className="club-label uppercase">{t.home.writeToUs}</span>
-									<a className="club-link" href={`mailto:${t.home.email}`}>
-										{t.home.email} <ArrowUpRight className="club-link-icon" />
-									</a>
+									<MyLink
+										className="club-contact-item-content"
+										route={`mailto:${t.home.email}`}
+									>
+										{t.home.email}
+									</MyLink>
 								</div>
 							</div>
 							<div className="club-contact-item">
 								<MapPin />
 								<div>
 									<span className="club-label uppercase">{t.home.findUs}</span>
-									<p className="club-copy">{t.home.location}</p>
-									<p className="club-copy club-location-note">
-										{t.home.locationNote}
+									<p className="club-copy club-contact-item-content">
+										{t.home.location}
 									</p>
 								</div>
 							</div>
@@ -134,9 +139,9 @@ export default function HomePage(): ReactElement {
 					<span className="club-label">{t.home.clubName}</span>
 				</div>
 
-				<a className="club-link club-back-top" href={`#${homeId}`}>
-					{t.home.backToTop} <ArrowUpRight className="club-link-icon" />
-				</a>
+				<MyLink className="club-link club-back-top" route={`#${homeId}`}>
+					{t.home.backToTop}
+				</MyLink>
 			</footer>
 		</div>
 	);
