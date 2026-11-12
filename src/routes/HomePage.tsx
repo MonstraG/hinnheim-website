@@ -55,7 +55,11 @@ export default function HomePage(): ReactElement {
 						{t.home.heroHeadingAccent}
 					</h1>
 					<p className="club-copy club-hero-copy">{t.home.heroCopy}</p>
-					<MyButton variant="light" style={{ marginTop: 32 }} route={`#${contactId}`}>
+					<MyButton
+						variant="light"
+						style={{ marginTop: "var(--gap-4)" }}
+						route={`#${contactId}`}
+					>
 						{t.home.findYourPlace}
 					</MyButton>
 				</div>
@@ -102,7 +106,7 @@ export default function HomePage(): ReactElement {
 							<p className="club-copy">{t.home.contactCopy}</p>
 							<MyButton
 								variant="light"
-								style={{ marginTop: 32 }}
+								style={{ marginTop: "var(--gap-4)" }}
 								route={`mailto:${t.home.email}`}
 							>
 								{t.home.sayHello}
