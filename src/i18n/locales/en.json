@@ -44,6 +44,34 @@
 		"meta": {
 			"title": "About",
 			"description": "This page is under construction"
+		},
+		"boardHeading": "The board",
+		"roles": {
+			"leader": "Board leader",
+			"member": "Board member",
+			"membersRep": "Members' representative"
+		},
+		"people": {
+			"leader": {
+				"name": "Tools Knekkebrød",
+				"description": "They've got curved swords. Curved. Swords."
+			},
+			"member1": {
+				"name": "JoJo's bizzare Ride",
+				"description": "Who's filming?"
+			},
+			"member2": {
+				"name": "Melon",
+				"description": "Mmm... tasty."
+			},
+			"member3": {
+				"name": "An Kaminoan",
+				"description": "She's got her game face on."
+			},
+			"membersRep": {
+				"name": "Mother Fucking john Sena",
+				"description": "Friendly neighborhood kindergarten teacher"
+			}
 		}
 	},
 	"runic": {
