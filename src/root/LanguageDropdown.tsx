@@ -21,6 +21,7 @@ export function LanguageDropdown(): ReactElement | null {
 	return (
 		<>
 			<MyButton
+				className="language-toggle"
 				square
 				variant="light"
 				type="button"

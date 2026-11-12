@@ -6,6 +6,8 @@
 		"backHome": "Back to home"
 	},
 	"nav": {
+		"openMenu": "Open menu",
+		"closeMenu": "Close menu",
 		"language": "Language",
 		"aboutUs": "About us",
 		"contact": "Get in touch"

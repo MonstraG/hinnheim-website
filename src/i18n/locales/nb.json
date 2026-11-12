@@ -6,6 +6,8 @@
 		"backHome": "Til forsiden"
 	},
 	"nav": {
+		"openMenu": "Åpne meny",
+		"closeMenu": "Lukk meny",
 		"language": "Språk",
 		"aboutUs": "Om oss",
 		"contact": "Ta kontakt"

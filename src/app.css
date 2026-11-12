@@ -157,6 +157,10 @@
 
 		--headerHeight: 96px;
 
+		@media (width < 768px) {
+			--headerHeight: 80px;
+		}
+
 		--gap: 8px;
 		--gap-quarter: calc(var(--gap) / 4);
 		--gap-half: calc(var(--gap) / 2);
@@ -316,6 +320,10 @@
 		justify-content: space-between;
 		gap: var(--gap-2);
 
+		.nav-toggle {
+			display: none;
+		}
+
 		.header-logo {
 			width: 180px;
 			flex-shrink: 0;
@@ -355,8 +363,41 @@
 
 		@media (width < 768px) {
 			height: auto;
-			min-height: 80px;
 			gap: var(--gap);
+			flex-wrap: wrap;
+			padding-block: var(--gap);
+
+			.nav-toggle {
+				display: inline-flex;
+			}
+
+			.nav {
+				display: none;
+				flex-basis: 100%;
+				flex-direction: column;
+				align-items: stretch;
+				gap: var(--gap-2);
+				padding-block: var(--gap-2);
+
+				&[data-open="true"] {
+					display: flex;
+				}
+
+				.nav-link {
+					padding-block: var(--gap);
+				}
+
+				.language-toggle {
+					align-self: flex-end;
+				}
+
+				.nav-divider {
+					border-left: 0;
+					border-top: 1px solid var(--ink);
+					height: 0;
+					width: 100%;
+				}
+			}
 		}
 	}
 }
