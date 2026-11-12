@@ -16,6 +16,7 @@ import { useLanguageFromPathname } from "./i18n/useLanguageFromPathname.ts";
 import { allLanguages, defaultLanguage } from "./i18n/language.ts";
 import { MyHeader } from "./root/MyHeader.tsx";
 import { MyFooter } from "./root/MyFooter.tsx";
+import NotFoundPage from "./routes/NotFoundPage.tsx";
 
 export const links: Route.LinksFunction = () => [
 	{ rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
@@ -31,7 +32,7 @@ export const links: Route.LinksFunction = () => [
 	},
 ];
 
-export async function loader({ params }: Route.LoaderArgs): Promise<I18nContextValue> {
+async function loadTranslations({ params }: Route.LoaderArgs): Promise<I18nContextValue> {
 	const language = allLanguages.find((l) => l.code === params.lang) ?? defaultLanguage;
 	const module = await import(`./i18n/locales/${language.code}.json`, {
 		with: { type: "json" },
@@ -39,6 +40,9 @@ export async function loader({ params }: Route.LoaderArgs): Promise<I18nContextV
 
 	return { language, t: module.default };
 }
+
+export const loader: typeof loadTranslations = loadTranslations;
+export const clientLoader: typeof loadTranslations = loadTranslations;
 
 export function Layout({ children }: { children: ReactNode }): ReactElement {
 	const language = useLanguageFromPathname();
@@ -60,13 +64,15 @@ export function Layout({ children }: { children: ReactNode }): ReactElement {
 	);
 }
 
-export default function App({ loaderData }: Route.ComponentProps): ReactElement {
+export default function App({ loaderData, params }: Route.ComponentProps): ReactElement {
+	const invalidLanguage = params.lang != null && !allLanguages.some((l) => l.code === params.lang);
+
 	return (
 		<I18nContext value={loaderData}>
 			<ViewTransition>
 				<MyHeader />
 				<main>
-					<Outlet />
+					{invalidLanguage ? <NotFoundPage /> : <Outlet />}
 				</main>
 				<MyFooter />
 			</ViewTransition>

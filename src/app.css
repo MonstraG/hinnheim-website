@@ -127,6 +127,8 @@
 
 	main {
 		min-height: calc(100vh - var(--headerHeight));
+		display: flex;
+		flex-direction: column;
 	}
 
 	::view-transition-group(*),
@@ -177,6 +179,22 @@
 }
 
 @layer ui {
+	.notFound {
+		flex-grow: 1;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: var(--gap-3);
+		padding-block: var(--gap-8);
+
+		.notFound-code {
+			font-size: clamp(80px, 15vw, 160px);
+			line-height: 1;
+			color: var(--focusColor);
+		}
+	}
+
 	button {
 		cursor: pointer;
 	}

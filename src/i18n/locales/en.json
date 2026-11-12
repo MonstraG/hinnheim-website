@@ -1,5 +1,10 @@
 {
 	"logoAlt": "Our logo",
+	"notFound": {
+		"title": "Page not found",
+		"description": "We couldn't find the page you're looking for.",
+		"backHome": "Back to home"
+	},
 	"nav": {
 		"language": "Language"
 	},

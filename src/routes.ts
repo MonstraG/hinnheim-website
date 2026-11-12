@@ -3,10 +3,10 @@ import { allRoutes } from "./root/routeRegistry.ts";
 
 const config: RouteConfig = [
 	route("favicon.svg", "routes/favicon.tsx"),
-	...prefix(
-		":lang?",
-		allRoutes.map(({ path, file }) => route(path.slice(1), file, { id: file })),
-	),
+	...prefix(":lang?", [
+		...allRoutes.map(({ path, file }) => route(path.slice(1), file, { id: file })),
+		route("*", "routes/NotFoundPage.tsx"),
+	]),
 ];
 
 export default config;

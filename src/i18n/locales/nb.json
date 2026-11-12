@@ -1,5 +1,10 @@
 {
 	"logoAlt": "Logoen vår",
+	"notFound": {
+		"title": "Fant ikke siden",
+		"description": "Vi fant ikke siden du leter etter.",
+		"backHome": "Til forsiden"
+	},
 	"nav": {
 		"language": "Språk"
 	},
