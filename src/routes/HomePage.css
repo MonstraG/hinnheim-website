@@ -8,7 +8,7 @@
 	color: #fffdf6;
 	background: #1c3028;
 
-	@media (max-width: 768px) {
+	@media (width < 768px) {
 		min-height: 480px;
 		height: auto;
 	}
@@ -49,7 +49,7 @@
 	padding-block: calc(var(--gap) * 11) calc(var(--gap) * 12);
 	scroll-margin-top: var(--gap-3);
 
-	@media (max-width: 768px) {
+	@media (width < 768px) {
 		padding-block: var(--gap-8);
 	}
 }
@@ -61,11 +61,11 @@
 	margin-top: calc(var(--gap) * 4.375);
 	align-items: center;
 
-	@media (max-width: 1280px) {
+	@media (width < 1280px) {
 		gap: var(--gap-4);
 	}
 
-	@media (max-width: 768px) {
+	@media (width < 768px) {
 		grid-template-columns: 1fr;
 		gap: var(--gap-2);
 		margin-top: var(--gap-2);
@@ -112,7 +112,7 @@
 		max-width: 300px;
 	}
 
-	@media (max-width: 768px) {
+	@media (width < 768px) {
 		grid-template-columns: 1fr;
 		margin-top: var(--gap-2);
 
@@ -146,7 +146,7 @@
 	color: #f4f1e8;
 	padding-block: var(--gap-7) calc(var(--gap) * 10);
 
-	@media (max-width: 768px) {
+	@media (width < 768px) {
 		padding-block: var(--gap-5) var(--gap-6);
 	}
 }
@@ -167,11 +167,11 @@
 		}
 	}
 
-	@media (max-width: 1280px) {
+	@media (width < 1280px) {
 		gap: var(--gap-4);
 	}
 
-	@media (max-width: 768px) {
+	@media (width < 768px) {
 		grid-template-columns: 1fr;
 		gap: var(--gap-2);
 		margin-top: var(--gap-2);
@@ -207,7 +207,7 @@
 		font-size: 20px;
 	}
 
-	@media (max-width: 768px) {
+	@media (width < 768px) {
 		padding-left: 0;
 		border-left: 0;
 

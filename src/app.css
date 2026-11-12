@@ -92,7 +92,7 @@
 		font-size: calc(var(--fontSize) * 4);
 		font-weight: bold;
 
-		@media (max-width: 1280px) {
+		@media (width < 1280px) {
 			font-size: calc(var(--fontSize) * 2.5);
 		}
 	}
@@ -100,7 +100,7 @@
 	h2 {
 		font-size: calc(var(--fontSize) * 3);
 
-		@media (max-width: 1280px) {
+		@media (width < 1280px) {
 			font-size: calc(var(--fontSize) * 2);
 		}
 	}
@@ -108,7 +108,7 @@
 	h3 {
 		font-size: calc(var(--fontSize) * 2);
 
-		@media (max-width: 1280px) {
+		@media (width < 1280px) {
 			font-size: calc(var(--fontSize) * 1.5);
 		}
 	}
@@ -292,7 +292,7 @@
 		gap: var(--gap-3);
 		padding-block: var(--gap-4);
 
-		@media (max-width: 768px) {
+		@media (width < 768px) {
 			flex-wrap: wrap;
 			gap: var(--gap-2);
 		}
@@ -320,7 +320,7 @@
 			width: 180px;
 			flex-shrink: 0;
 
-			@media (max-width: 768px) {
+			@media (width < 768px) {
 				width: 120px;
 			}
 		}
@@ -348,12 +348,12 @@
 			}
 		}
 
-		@media (max-width: 1280px) {
+		@media (width < 1280px) {
 			padding-inline: var(--gap-2);
 			gap: var(--gap-2);
 		}
 
-		@media (max-width: 768px) {
+		@media (width < 768px) {
 			height: auto;
 			min-height: 80px;
 			gap: var(--gap);
@@ -378,7 +378,7 @@
 		width: 100%;
 		margin-inline: auto;
 
-		@media (max-width: 1280px) {
+		@media (width < 1280px) {
 			padding-inline: var(--gap-2);
 		}
 	}
