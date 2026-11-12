@@ -6,12 +6,14 @@ import type { Language } from "../i18n/language.ts";
 
 export interface MyInternalLinkProps extends Omit<LinkProps, "to" | "href"> {
 	language?: Language;
+	hash?: `#${string}`;
 	route: MyRoute | `#${string}` | `mailto:${string}` | `https://${string}`;
 }
 
 export function MyInternalLink({
 	route,
 	language,
+	hash,
 	prefetch,
 	hrefLang,
 	...props
@@ -23,7 +25,7 @@ export function MyInternalLink({
 	return (
 		<Link
 			{...props}
-			to={destination}
+			to={hash ? { pathname: destination, hash } : destination}
 			prefetch={prefetch ?? "intent"}
 			hrefLang={language?.code ?? hrefLang}
 		/>

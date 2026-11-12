@@ -1,15 +1,3 @@
-.club-home {
-	--club-ink: #203d34;
-	--club-paper: #f5f3ed;
-	color: var(--club-ink);
-	background: var(--club-paper);
-
-	.club-value-heading {
-		font-size: 24px;
-		margin-block: var(--gap-2) calc(var(--gap) * 1.5);
-	}
-}
-
 .club-width {
 	width: min(1200px, calc(100% - var(--gap) * 14));
 	margin-inline: auto;
@@ -80,7 +68,7 @@
 	}
 
 	.myMenu {
-		background: var(--club-paper);
+		background: var(--paper);
 		border: 1px solid #d5d8ce;
 		padding: var(--gap-2) var(--gap-3);
 
@@ -109,7 +97,7 @@
 	.myLogo {
 		width: 100%;
 		height: auto;
-		fill: var(--club-ink);
+		fill: var(--ink);
 	}
 
 	@media (max-width: 768px) {
@@ -247,6 +235,11 @@
 		.club-copy {
 			max-width: none;
 		}
+	}
+
+	.club-value-heading {
+		font-size: 24px;
+		margin-block: var(--gap-2) calc(var(--gap) * 1.5);
 	}
 }
 

@@ -1,5 +1,5 @@
 import { type ReactElement, useId, useState } from "react";
-import { MyLink } from "../ui/MyLink.js";
+import { MyLink } from "../ui/MyLink.tsx";
 
 const runeMap = {
 	f: "ᚠ",

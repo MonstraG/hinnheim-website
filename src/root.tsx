@@ -14,6 +14,8 @@ import { ViewTransition } from "react";
 import { type I18nContextValue, I18nContext } from "./i18n/I18nContext.ts";
 import { useLanguageFromPathname } from "./i18n/useLanguageFromPathname.ts";
 import { allLanguages, defaultLanguage } from "./i18n/language.ts";
+import { MyHeader } from "./root/MyHeader.tsx";
+import { MyFooter } from "./root/MyFooter.tsx";
 
 export const links: Route.LinksFunction = () => [
 	{ rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -61,9 +63,11 @@ export default function App({ loaderData }: Route.ComponentProps): ReactElement 
 	return (
 		<I18nContext value={loaderData}>
 			<ViewTransition>
+				<MyHeader />
 				<main>
 					<Outlet />
 				</main>
+				<MyFooter />
 			</ViewTransition>
 		</I18nContext>
 	);

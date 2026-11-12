@@ -1,45 +1,22 @@
 import { type ReactElement, useId } from "react";
-import { ArrowUpIcon, Mail, MapPin } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 import { useI18nContext } from "../i18n/useI18nContext.ts";
 import { MyMeta } from "../root/MyMeta.tsx";
 import { routeRegistry } from "../root/routeRegistry.ts";
-import { LanguageDropdown } from "../root/LanguageDropdown.tsx";
-import { Logo } from "../ui/Logo.tsx";
 import { MyLink } from "../ui/MyLink.tsx";
 import { MyButton } from "../ui/MyButton.tsx";
 import "./HomePage.css";
+import { aboutId, contactId } from "../root/homeSectionIds.ts";
 
 export default function HomePage(): ReactElement {
 	const { t } = useI18nContext();
-	const homeId = useId();
-	const aboutId = useId();
-	const contactId = useId();
 	const heroTitleId = useId();
 	const aboutTitleId = useId();
 	const contactTitleId = useId();
 
 	return (
-		<div className="club-home" id={homeId}>
+		<>
 			<MyMeta route={routeRegistry.home} />
-			<header className="club-header">
-				<MyLink
-					className="club-link club-brand"
-					route={`#${homeId}`}
-					aria-label={t.home.brandHomeLabel}
-				>
-					<Logo />
-				</MyLink>
-				<nav className="club-nav" aria-label={t.home.navigationLabel}>
-					<MyLink className="club-link" route={`#${aboutId}`}>
-						{t.home.clubLink}
-					</MyLink>
-					<MyLink className="club-link" route={`#${contactId}`}>
-						{t.home.contactLink}
-					</MyLink>
-					<LanguageDropdown />
-				</nav>
-			</header>
-
 			<section className="club-hero" aria-labelledby={heroTitleId}>
 				<img
 					className="club-hero-photo"
@@ -64,7 +41,6 @@ export default function HomePage(): ReactElement {
 					</MyButton>
 				</div>
 			</section>
-
 			<section className="club-about club-width" id={aboutId} aria-labelledby={aboutTitleId}>
 				<div className="club-about-heading">
 					<h2 className="club-heading" id={aboutTitleId}>
@@ -95,7 +71,6 @@ export default function HomePage(): ReactElement {
 					</article>
 				</div>
 			</section>
-
 			<section className="club-contact" id={contactId} aria-labelledby={contactTitleId}>
 				<div className="club-width">
 					<div className="club-contact-grid">
@@ -138,14 +113,6 @@ export default function HomePage(): ReactElement {
 					</div>
 				</div>
 			</section>
-			<footer className="footer club-width">
-				<p className="footer-runic">ᚨᚾᚾᚨ ᛖᛚᛋᚲᛖᚱ ᛈᚱᛟᛗᛈ</p>
-
-				<MyLink className="footer-back-to-top" route={`#${homeId}`}>
-					{t.home.backToTop}
-					<ArrowUpIcon style={{ height: "14px" }} />
-				</MyLink>
-			</footer>
-		</div>
+		</>
 	);
 }

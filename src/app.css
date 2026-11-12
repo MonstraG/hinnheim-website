@@ -144,6 +144,10 @@
 @layer theme {
 	:root {
 		--beige: #f6f0da;
+		--ink: #203d34;
+		--paper: #f5f3ed;
+		color: var(--ink);
+		background: var(--paper);
 
 		--gap: 8px;
 		--gap-quarter: calc(var(--gap) / 4);
