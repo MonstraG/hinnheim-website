@@ -125,6 +125,10 @@
 		font-size: calc(var(--fontSize) * 0.75);
 	}
 
+	main {
+		min-height: calc(100vh - var(--headerHeight));
+	}
+
 	::view-transition-group(*),
 	::view-transition-old(*),
 	::view-transition-new(*) {
@@ -148,6 +152,8 @@
 		--paper: #f5f3ed;
 		color: var(--ink);
 		background: var(--paper);
+
+		--headerHeight: 96px;
 
 		--gap: 8px;
 		--gap-quarter: calc(var(--gap) / 4);
@@ -286,7 +292,7 @@
 	}
 
 	.myHeader {
-		height: 96px;
+		height: var(--headerHeight);
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
