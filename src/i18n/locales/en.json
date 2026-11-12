@@ -6,7 +6,9 @@
 		"backHome": "Back to home"
 	},
 	"nav": {
-		"language": "Language"
+		"language": "Language",
+		"aboutUs": "About us",
+		"contact": "Get in touch"
 	},
 	"home": {
 		"meta": {
@@ -27,8 +29,6 @@
 		"thirdCopy": "Wobbly biscuit planet, feather kettle snowstorm. Jellybean curtains chase a polka-dot cucumber.",
 		"contactCopy": "Marshmallow boots shuffle, fizzy carpet pineapple. A sleepy turnip dances past the whistling cupboard.",
 		"brandHomeLabel": "Hinnheim home",
-		"clubLink": "The club",
-		"contactLink": "Get in touch",
 		"heroImageAlt": "Hero image",
 		"clubName": "Bergen Historiske Kampsportklubb",
 		"findYourPlace": "Find your place",

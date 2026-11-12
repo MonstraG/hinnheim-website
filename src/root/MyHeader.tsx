@@ -4,7 +4,7 @@ import { useI18nContext } from "../i18n/useI18nContext.ts";
 import { Logo } from "../ui/Logo.tsx";
 import { LanguageDropdown } from "./LanguageDropdown.tsx";
 import { routeRegistry } from "./routeRegistry.ts";
-import { aboutId, contactId } from "./homeSectionIds.ts";
+import { contactId } from "./homeSectionIds.ts";
 
 export function MyHeader(): ReactElement {
 	const { t } = useI18nContext();
@@ -19,11 +19,9 @@ export function MyHeader(): ReactElement {
 				<Logo />
 			</MyLink>
 			<nav className="nav">
-				<MyLink route={routeRegistry.home} hash={`#${aboutId}`}>
-					{t.home.clubLink}
-				</MyLink>
+				<MyLink route={routeRegistry.about}>{t.nav.aboutUs}</MyLink>
 				<MyLink route={routeRegistry.home} hash={`#${contactId}`}>
-					{t.home.contactLink}
+					{t.nav.contact}
 				</MyLink>
 				<span className="nav-divider" />
 				<LanguageDropdown />
