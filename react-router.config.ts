@@ -7,9 +7,12 @@ const config: Config = {
 		unstable_optimizeDeps: true,
 	},
 	ssr: false,
-	prerender: allRoutes.flatMap((route) =>
-		allLanguages.map((language) => makeHref(route, language)),
-	),
+	prerender: [
+		"/favicon.svg",
+		...allRoutes.flatMap((route) =>
+			allLanguages.map((language) => makeHref(route, language)),
+		),
+	],
 	splitRouteModules: false,
 	appDirectory: "src",
 };
