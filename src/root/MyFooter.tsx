@@ -8,7 +8,7 @@ export function MyFooter(): ReactElement {
 	const { t } = useI18nContext();
 
 	return (
-		<footer className="footer club-width">
+		<footer className="myFooter container">
 			<p className="footer-runic">ᚨᚾᚾᚨ ᛖᛚᛋᚲᛖᚱ ᛈᚱᛟᛗᛈ</p>
 
 			<MyLink className="footer-back-to-top" route={routeRegistry.home}>

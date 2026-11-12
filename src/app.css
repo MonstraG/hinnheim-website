@@ -211,19 +211,27 @@
 
 		&.myButton-normal {
 			background: var(--beige);
+
+			&:hover {
+				background: #e4dab9;
+			}
 		}
 
 		&.myButton-light {
 			background: #f4f1e8;
 			color: #203d34;
+
+			&:hover {
+				background: #ded8c9;
+			}
 		}
 
-		&:hover {
-			background: #ded8c9;
+		&.square {
+			padding: var(--gap-2);
 		}
 
 		@media (prefers-reduced-motion: no-preference) {
-			transition: background 180ms;
+			transition: background-color 180ms;
 		}
 	}
 
@@ -253,7 +261,7 @@
 		}
 	}
 
-	.footer {
+	.myFooter {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
@@ -276,6 +284,57 @@
 			font-size: 14px;
 		}
 	}
+
+	.myHeader {
+		height: 96px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: var(--gap-2);
+
+		.header-logo {
+			width: 180px;
+			flex-shrink: 0;
+
+			@media (max-width: 768px) {
+				width: 120px;
+			}
+		}
+
+		.nav {
+			display: flex;
+			align-items: center;
+			gap: var(--gap-4);
+
+			.nav-divider {
+				border-left: 1px solid var(--ink);
+				height: var(--gap-5);
+				opacity: 0.2;
+			}
+		}
+
+		.myMenu {
+			background: var(--paper);
+			border: 1px solid #d5d8ce;
+			padding: var(--gap-2) var(--gap-3);
+
+			.myLink {
+				display: block;
+				padding-block: var(--gap);
+			}
+		}
+
+		@media (max-width: 1280px) {
+			padding-inline: var(--gap-2);
+			gap: var(--gap-2);
+		}
+
+		@media (max-width: 768px) {
+			height: auto;
+			min-height: 80px;
+			gap: var(--gap);
+		}
+	}
 }
 
 @layer utils {
@@ -292,6 +351,7 @@
 	.container {
 		padding-inline: var(--gap-3);
 		max-width: 1280px;
+		width: 100%;
 		margin-inline: auto;
 
 		@media (max-width: 1280px) {

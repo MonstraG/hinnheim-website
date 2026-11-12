@@ -21,7 +21,8 @@ export function LanguageDropdown(): ReactElement | null {
 	return (
 		<>
 			<MyButton
-				className="language-toggle"
+				square
+				variant="light"
 				type="button"
 				popoverTarget={id}
 				aria-label={t.nav.language}

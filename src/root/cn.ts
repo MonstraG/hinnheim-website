@@ -1,4 +1,4 @@
-export function cn(...classNames: (string | undefined | null)[]): string {
+export function cn(...classNames: (string | false | undefined | null)[]): string {
 	let result = "";
 	for (const className of classNames) {
 		if (!className) {

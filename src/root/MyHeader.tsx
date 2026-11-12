@@ -10,21 +10,22 @@ export function MyHeader(): ReactElement {
 	const { t } = useI18nContext();
 
 	return (
-		<header className="club-header">
+		<header className="myHeader container">
 			<MyLink
-				className="club-link club-brand"
+				className="header-logo"
 				route={routeRegistry.home}
 				aria-label={t.home.brandHomeLabel}
 			>
 				<Logo />
 			</MyLink>
-			<nav className="club-nav" aria-label={t.home.navigationLabel}>
-				<MyLink className="club-link" route={routeRegistry.home} hash={`#${aboutId}`}>
+			<nav className="nav">
+				<MyLink route={routeRegistry.home} hash={`#${aboutId}`}>
 					{t.home.clubLink}
 				</MyLink>
-				<MyLink className="club-link" route={routeRegistry.home} hash={`#${contactId}`}>
+				<MyLink route={routeRegistry.home} hash={`#${contactId}`}>
 					{t.home.contactLink}
 				</MyLink>
+				<span className="nav-divider" />
 				<LanguageDropdown />
 			</nav>
 		</header>

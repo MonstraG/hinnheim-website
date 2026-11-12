@@ -6,10 +6,16 @@ type ButtonProps = ComponentProps<"button"> & { route?: never };
 
 type Props = (ButtonProps | MyInternalLinkProps) & {
 	variant?: "normal" | "light";
+	square?: boolean;
 };
 
-export function MyButton({ variant = "normal", ...props }: Props): ReactElement {
-	const resolvedClassName = cn("myButton", `myButton-${variant}`, props.className);
+export function MyButton({ variant = "normal", square, ...props }: Props): ReactElement {
+	const resolvedClassName = cn(
+		"myButton",
+		`myButton-${variant}`,
+		square && `square`,
+		props.className,
+	);
 
 	if ("route" in props && props.route != null) {
 		return <MyInternalLink {...props} className={resolvedClassName} />;

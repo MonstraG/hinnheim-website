@@ -25,7 +25,7 @@ export default function HomePage(): ReactElement {
 					fetchPriority="high"
 				/>
 				<div className="club-hero-shade" />
-				<div className="club-hero-content club-width">
+				<div className="club-hero-content container">
 					<h1 className="club-title" id={heroTitleId}>
 						{t.home.heroHeading}
 						<br />
@@ -41,7 +41,7 @@ export default function HomePage(): ReactElement {
 					</MyButton>
 				</div>
 			</section>
-			<section className="club-about club-width" id={aboutId} aria-labelledby={aboutTitleId}>
+			<section className="club-about container" id={aboutId} aria-labelledby={aboutTitleId}>
 				<div className="club-about-heading">
 					<h2 className="club-heading" id={aboutTitleId}>
 						{t.home.aboutHeading}
@@ -72,7 +72,7 @@ export default function HomePage(): ReactElement {
 				</div>
 			</section>
 			<section className="club-contact" id={contactId} aria-labelledby={contactTitleId}>
-				<div className="club-width">
+				<div className="container">
 					<div className="club-contact-grid">
 						<div className="club-contact-intro">
 							<h2 className="club-heading" id={contactTitleId}>
