@@ -336,24 +336,6 @@
 	}
 }
 
-.club-footer {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	gap: 24px;
-	padding-block: 32px;
-
-	.club-footer-names {
-		display: flex;
-		flex-direction: column;
-	}
-
-	@media (max-width: 768px) {
-		flex-wrap: wrap;
-		gap: 16px;
-	}
-}
-
 .club-back-top {
 	display: flex;
 	align-items: center;

@@ -6,7 +6,7 @@ import type { Language } from "../i18n/language.ts";
 
 export interface MyInternalLinkProps extends Omit<LinkProps, "to" | "href"> {
 	language?: Language;
-	route: MyRoute | `#${string}` | `mailto:${string}`;
+	route: MyRoute | `#${string}` | `mailto:${string}` | `https://${string}`;
 }
 
 export function MyInternalLink({

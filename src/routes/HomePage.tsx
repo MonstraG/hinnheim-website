@@ -134,11 +134,8 @@ export default function HomePage(): ReactElement {
 					</div>
 				</div>
 			</section>
-			<footer className="club-footer club-width">
-				<div className="club-footer-names">
-					<span className="club-label uppercase">{t.home.brandName}</span>
-					<span className="club-label">{t.home.clubName}</span>
-				</div>
+			<footer className="footer club-width">
+				<p className="footer-runic">ᚨᚾᚾᚨ ᛖᛚᛋᚲᛖᚱ ᛈᚱᛟᛗᛈ</p>
 
 				<MyLink className="club-link club-back-top" route={`#${homeId}`}>
 					{t.home.backToTop}

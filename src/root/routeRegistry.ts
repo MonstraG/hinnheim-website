@@ -10,9 +10,11 @@ export interface MyRoute {
 export const routeRegistry: Readonly<{
 	home: MyRoute;
 	about: MyRoute;
+	runic: MyRoute;
 }> = {
 	home: { path: "/", namespace: "home", file: "routes/HomePage.tsx" },
 	about: { path: "/about", namespace: "about", file: "routes/AboutPage.tsx" },
+	runic: { path: "/runic", namespace: "runic", file: "routes/RunicPage.tsx" },
 };
 
 export const allRoutes: MyRoute[] = Object.values(routeRegistry);

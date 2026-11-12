@@ -34,13 +34,18 @@
 		"writeToUs": "Write to us",
 		"email": "hello@example.com",
 		"findUs": "Find us",
-		"brandName": "Hinnheim",
 		"backToTop": "Back to top"
 	},
 	"about": {
 		"meta": {
 			"title": "About",
 			"description": "This page is under construction"
+		}
+	},
+	"runic": {
+		"meta": {
+			"title": "Runic converter",
+			"description": ""
 		}
 	}
 }

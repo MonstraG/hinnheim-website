@@ -145,6 +145,8 @@
 	:root {
 		--beige: #f6f0da;
 
+		--gap: 8px;
+
 		--focusColor: #ba9b69;
 		--focusOutline: 2px solid var(--focusColor);
 		--focusOffset: 2px;
@@ -235,6 +237,24 @@
 			&:popover-open {
 				opacity: 0;
 			}
+		}
+	}
+
+	.footer {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 24px;
+		padding-block: 32px;
+
+		@media (max-width: 768px) {
+			flex-wrap: wrap;
+			gap: 16px;
+		}
+
+		.footer-runic {
+			opacity: 0.1;
+			font-size: 24px;
 		}
 	}
 }
