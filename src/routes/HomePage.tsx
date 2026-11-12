@@ -1,5 +1,5 @@
 import { type ReactElement, useId } from "react";
-import { Mail, MapPin } from "lucide-react";
+import { ArrowUpIcon, Mail, MapPin } from "lucide-react";
 import { useI18nContext } from "../i18n/useI18nContext.ts";
 import { MyMeta } from "../root/MyMeta.tsx";
 import { routeRegistry } from "../root/routeRegistry.ts";
@@ -141,8 +141,9 @@ export default function HomePage(): ReactElement {
 			<footer className="footer club-width">
 				<p className="footer-runic">ᚨᚾᚾᚨ ᛖᛚᛋᚲᛖᚱ ᛈᚱᛟᛗᛈ</p>
 
-				<MyLink className="club-link club-back-top" route={`#${homeId}`}>
+				<MyLink className="footer-back-to-top" route={`#${homeId}`}>
 					{t.home.backToTop}
+					<ArrowUpIcon style={{ height: "14px" }} />
 				</MyLink>
 			</footer>
 		</div>

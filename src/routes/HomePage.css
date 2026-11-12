@@ -73,10 +73,6 @@
 			flex-wrap: nowrap;
 			flex-shrink: 0;
 
-			.club-link {
-				display: none;
-			}
-
 			.language-toggle {
 				border-left: 0;
 			}
@@ -333,10 +329,4 @@
 			gap: var(--gap-2);
 		}
 	}
-}
-
-.club-back-top {
-	display: flex;
-	align-items: center;
-	font-size: 14px;
 }

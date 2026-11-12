@@ -265,6 +265,12 @@
 			opacity: 0.1;
 			font-size: 24px;
 		}
+
+		.footer-back-to-top {
+			display: flex;
+			align-items: center;
+			font-size: 14px;
+		}
 	}
 }
 
