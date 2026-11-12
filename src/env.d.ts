@@ -3,7 +3,6 @@ interface ImportMetaEnv {
 	readonly VITE_SITE_URL?: string;
 }
 
-// biome-ignore lint/correctness/noUnusedVariables: meta
 interface ImportMeta {
 	readonly env: ImportMetaEnv;
 }

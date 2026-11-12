@@ -31,9 +31,6 @@
 		"thirdCopy": "Vaklende kjeks planet, fjær kjele snøstorm. Gelégardiner jager en prikkete agurk.",
 		"contactCopy": "Marshmallow støvler stokke, brusende teppe ananas. En søvnig nepe danser forbi det plystrende skapet.",
 		"brandHomeLabel": "Hinnheim hjem",
-		"navigationLabel": "Navigasjon på hjemmesiden",
-		"clubLink": "Klubben",
-		"contactLink": "Ta kontakt",
 		"heroImageAlt": "Hero image",
 		"clubName": "Bergen Historiske Kampsportklubb",
 		"findYourPlace": "Finn din plass",
@@ -41,9 +38,7 @@
 		"meetUs": "Kom og møt oss",
 		"sayHello": "Si hei",
 		"writeToUs": "Skriv til oss",
-		"email": "hello@example.com",
 		"findUs": "Finn oss",
-		"brandName": "Hinnheim",
 		"backToTop": "Til toppen"
 	},
 	"about": {
@@ -52,8 +47,6 @@
 			"description": "tba"
 		},
 		"boardHeading": "Styret",
-		"memberName": "Navn kommer",
-		"memberDescription": "Litt om dette styremedlemmet.",
 		"roles": {
 			"leader": "Leder",
 			"member": "Medlem",

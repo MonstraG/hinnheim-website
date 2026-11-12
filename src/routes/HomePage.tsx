@@ -8,6 +8,8 @@ import { MyButton } from "../ui/MyButton.tsx";
 import "./HomePage.css";
 import { aboutId, contactId } from "../root/homeSectionIds.ts";
 
+const contactEmail = "mailto:hello@example.com";
+
 export default function HomePage(): ReactElement {
 	const { t } = useI18nContext();
 	const heroTitleId = useId();
@@ -82,7 +84,7 @@ export default function HomePage(): ReactElement {
 							<MyButton
 								variant="light"
 								style={{ marginTop: "var(--gap-4)" }}
-								route={`mailto:${t.home.email}`}
+								route={contactEmail}
 							>
 								{t.home.sayHello}
 							</MyButton>
@@ -94,9 +96,9 @@ export default function HomePage(): ReactElement {
 									<span className="club-label uppercase">{t.home.writeToUs}</span>
 									<MyLink
 										className="club-contact-item-content"
-										route={`mailto:${t.home.email}`}
+										route={contactEmail}
 									>
-										{t.home.email}
+										{contactEmail}
 									</MyLink>
 								</div>
 							</div>
