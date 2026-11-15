@@ -1,5 +1,6 @@
 FROM node:26-alpine AS base
-USER $APP_UID
+RUN mkdir -p /app /pnpm && chown node:node /app /pnpm
+USER node
 WORKDIR /app
 ENV PNPM_HOME=/pnpm
 ENV PATH="$PNPM_HOME/bin:$PATH"
@@ -8,7 +9,7 @@ RUN wget -qO- https://get.pnpm.io/install.sh | env ENV="$HOME/.shrc" SHELL="$(wh
 
 FROM base AS dependencies
 COPY pnpm-lock.yaml pnpm-workspace.yaml ./
-RUN --mount=type=cache,id=pnpm,target=/var/cache/pnpm \
+RUN --mount=type=cache,id=pnpm,target=/var/cache/pnpm,uid=1000,gid=1000 \
     pnpm install --frozen-lockfile --store-dir=/var/cache/pnpm
 
 FROM dependencies AS builder
@@ -19,7 +20,7 @@ RUN pnpm run build
 
 FROM base AS production-dependencies
 COPY pnpm-lock.yaml pnpm-workspace.yaml ./
-RUN --mount=type=cache,id=pnpm,target=/var/cache/pnpm \
+RUN --mount=type=cache,id=pnpm,target=/var/cache/pnpm,uid=1000,gid=1000 \
     pnpm install --prod --frozen-lockfile --store-dir=/var/cache/pnpm
 
 FROM base AS runner
