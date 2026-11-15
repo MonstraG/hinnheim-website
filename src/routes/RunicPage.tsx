@@ -68,33 +68,53 @@ export default function RunicPage(): ReactElement {
 	})();
 
 	return (
-		<>
-			<MyLink route="https://en.wikipedia.org/wiki/Runes">Runes wikipedia page</MyLink>
-			<p>I just took wikipedia page and made a simple converter.</p>
-			<p>remarks:</p>
-			<ul>
-				<li>When multiple characters are available, I picked easier</li>
-				<li>
-					I used Elder Futhark (as provided by the table on the linked page) as main
-					source, but not all of the English letters are available there, so I had to go
-					down to more newer alphabets' pages to find mappings
-				</li>
-				<li>
-					I tried adding conversion for Norwegian characters, as well as common
-					alternatives (æ, ae), but they are not always present.
-				</li>
-				<li>
-					If appropriate rune was not found, I give up and give back the original letter.
-				</li>
-				<li>Case-insensitive.</li>
-			</ul>
-
-			<input
-				id={id}
-				value={inputValue}
-				onChange={(event) => setInputValue(event.target.value)}
-			/>
-			<output htmlFor={id}>{outputValue}</output>
-		</>
+		<article
+			className="container"
+			style={{ display: "flex", flexDirection: "column", gap: "1rem" }}
+		>
+			<h1>Runes converter</h1>
+			<section>
+				<p style={{ marginBottom: "1rem" }}>
+					I just took{" "}
+					<MyLink route="https://en.wikipedia.org/wiki/Runes">
+						"Runes" wikipedia page
+					</MyLink>{" "}
+					and made a simple converter.
+				</p>
+				<p>Remarks:</p>
+				<ul>
+					<li>When multiple characters are available, I picked easier</li>
+					<li>
+						I used Elder Futhark (as provided by the table on the linked page) as main
+						source, but not all of the English letters are available there, so I had to
+						go down to more newer alphabets' pages to find mappings
+					</li>
+					<li>
+						I tried adding conversion for Norwegian characters, as well as common
+						alternatives (æ, ae), but they are not always present.
+					</li>
+					<li>
+						If appropriate rune was not found, I give up and give back the original
+						letter.
+					</li>
+					<li>Case-insensitive.</li>
+				</ul>
+			</section>
+			<section
+				style={{
+					display: "flex",
+					flexDirection: "column",
+					gap: "1rem",
+					alignItems: "start",
+				}}
+			>
+				<input
+					id={id}
+					value={inputValue}
+					onChange={(event) => setInputValue(event.target.value)}
+				/>
+				<output htmlFor={id}>{outputValue}</output>
+			</section>
+		</article>
 	);
 }
