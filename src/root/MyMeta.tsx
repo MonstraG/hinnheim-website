@@ -17,6 +17,11 @@ export function MyMeta({ route }: Props): ReactElement | null {
 	}
 	const { title, description } = translations.meta;
 	const pageTitle = `${title} | ${t.home.clubName}`;
+
+	if (import.meta.env.MODE !== "production") {
+		return <title>{pageTitle}</title>;
+	}
+
 	const url = siteUrl ? new URL(makeHref(route, language), siteUrl).href : undefined;
 	const image = siteUrl ? new URL("/hero.avif", siteUrl).href : undefined;
 
