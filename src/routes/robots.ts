@@ -4,7 +4,7 @@ import { allRoutes, makeHref } from "../root/routeRegistry.ts";
 export function loader(): Response {
 	const rules = ["User-agent: *", "Disallow: /"];
 
-	if (import.meta.env.PROD) {
+	if (import.meta.env.VITE_ENV === "production") {
 		for (const route of allRoutes.filter((route) => !route.hidden)) {
 			for (const language of allLanguages) {
 				rules.push(`Allow: ${makeHref(route, language)}$`);

@@ -1,5 +1,5 @@
 interface ImportMetaEnv {
-	/** Public website origin, used at build time for canonical and social preview URLs. */
+	readonly VITE_ENV: "development" | "staging" | "production";
 	readonly VITE_SITE_URL?: string;
 }
 

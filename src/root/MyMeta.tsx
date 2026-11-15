@@ -18,7 +18,7 @@ export function MyMeta({ route }: Props): ReactElement | null {
 	const { title, description } = translations.meta;
 	const pageTitle = `${title} | ${t.home.clubName}`;
 
-	if (import.meta.env.PROD) {
+	if (import.meta.env.VITE_ENV !== "production") {
 		return <title>{pageTitle}</title>;
 	}
 

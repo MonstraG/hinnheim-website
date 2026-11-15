@@ -65,15 +65,14 @@ export function Layout({ children }: { children: ReactNode }): ReactElement {
 }
 
 export default function App({ loaderData, params }: Route.ComponentProps): ReactElement {
-	const invalidLanguage = params.lang != null && !allLanguages.some((l) => l.code === params.lang);
+	const invalidLanguage =
+		params.lang != null && !allLanguages.some((l) => l.code === params.lang);
 
 	return (
 		<I18nContext value={loaderData}>
 			<ViewTransition>
 				<MyHeader />
-				<main>
-					{invalidLanguage ? <NotFoundPage /> : <Outlet />}
-				</main>
+				<main>{invalidLanguage ? <NotFoundPage /> : <Outlet />}</main>
 				<MyFooter />
 			</ViewTransition>
 		</I18nContext>
@@ -91,7 +90,7 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps): ReactElement
 			error.status === 404
 				? "The requested page could not be found."
 				: error.statusText || details;
-	} else if (import.meta.env.DEV && error && error instanceof Error) {
+	} else if (import.meta.env.VITE_ENV !== "production" && error && error instanceof Error) {
 		details = error.message;
 		stack = error.stack;
 	}
