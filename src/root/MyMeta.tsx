@@ -23,7 +23,7 @@ export function MyMeta({ route }: Props): ReactElement | null {
 	}
 
 	const url = siteUrl ? new URL(makeHref(route, language), siteUrl).href : undefined;
-	const image = siteUrl ? new URL("/hero.avif", siteUrl).href : undefined;
+	const image = siteUrl && route.metaImage ? new URL(route.metaImage, siteUrl).href : undefined;
 
 	return (
 		<>

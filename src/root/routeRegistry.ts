@@ -5,6 +5,7 @@ export interface MyRoute {
 	namespace: keyof Translations;
 	path: `/${string}`;
 	file: `routes/${string}Page.tsx`;
+	metaImage?: string;
 }
 
 export const routeRegistry: Readonly<{
@@ -12,9 +13,22 @@ export const routeRegistry: Readonly<{
 	about: MyRoute;
 	runic: MyRoute;
 }> = {
-	home: { path: "/", namespace: "home", file: "routes/HomePage.tsx" },
-	about: { path: "/about", namespace: "about", file: "routes/AboutPage.tsx" },
-	runic: { path: "/runic", namespace: "runic", file: "routes/RunicPage.tsx" },
+	home: {
+		path: "/",
+		namespace: "home",
+		file: "routes/HomePage.tsx",
+		metaImage: "/hero.avif",
+	},
+	about: {
+		path: "/about",
+		namespace: "about",
+		file: "routes/AboutPage.tsx",
+	},
+	runic: {
+		path: "/runic",
+		namespace: "runic",
+		file: "routes/RunicPage.tsx",
+	},
 };
 
 export const allRoutes: MyRoute[] = Object.values(routeRegistry);
