@@ -2,10 +2,11 @@ import { defaultLanguage, type Language } from "../i18n/language.ts";
 import type { Translations } from "../i18n/I18nContext.ts";
 
 export interface MyRoute {
-	namespace: keyof Translations;
 	path: `/${string}`;
+	namespace: keyof Translations;
 	file: `routes/${string}Page.tsx`;
 	metaImage?: string;
+	hidden?: boolean;
 }
 
 export const routeRegistry: Readonly<{
@@ -28,6 +29,7 @@ export const routeRegistry: Readonly<{
 		path: "/runic",
 		namespace: "runic",
 		file: "routes/RunicPage.tsx",
+		hidden: true,
 	},
 };
 

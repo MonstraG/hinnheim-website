@@ -9,6 +9,7 @@ const config: Config = {
 	ssr: false,
 	prerender: [
 		"/favicon.svg",
+		"/robots.txt",
 		...allRoutes.flatMap((route) =>
 			allLanguages.map((language) => makeHref(route, language)),
 		),
