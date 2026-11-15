@@ -1,3 +1,4 @@
+import reactCompiler from "@acusti/vite-plugin-react-compiler";
 import { reactRouter } from "@react-router/dev/vite";
 import { defineConfig, loadEnv, type UserConfig, type UserConfigFnObject } from "vite";
 
@@ -22,7 +23,15 @@ const config: UserConfigFnObject = defineConfig(({ mode }): UserConfig => {
 	}
 
 	return {
-		plugins: [reactRouter()],
+		plugins: [
+			reactRouter(),
+			reactCompiler({
+				compiler: {
+					panicThreshold: "all_errors",
+					reportDiagnostics: true,
+				},
+			}),
+		],
 		server: {
 			strictPort: true,
 		},
