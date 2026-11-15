@@ -4,6 +4,8 @@ services:
       context: .
       args:
         GIT_COMMIT_SHA: ${GIT_COMMIT_SHA:-}
+    environment:
+      PORT: ${PORT:-3020}
     ports:
-      - "3020:3020"
+      - "${PORT:-3020}:${PORT:-3020}"
     restart: unless-stopped
