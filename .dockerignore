@@ -7,6 +7,5 @@ README.md
 .agents
 .codex
 .aws
-.env
 .env.*
 dist
